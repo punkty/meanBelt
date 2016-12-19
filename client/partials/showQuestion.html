@@ -1,0 +1,18 @@
+<div ng-controler='sessionController'>
+<a href="/logout"><button>Log Out</button></a>
+<a href='#!/dash'><button>Home</button></a>
+    <div ng-controller='questionController'>
+    <a href="#!/addAnswer/{{ question._id }}"><button>Answer</button></a>
+        <h1>{{ question.title }}</h1>
+        <h3>{{ question.desc }}</h3>
+        <table>
+            <tr ng-repeat="answer in question._answers | orderBy:'-likes'">
+            <td>{{ answer._user }}:</td>
+            <td>{{ answer.content }}</td>
+            <td>{{ answer.support }}</td>
+            <td>{{ answer.likes }}</td>
+            <td><button ng-click='likeAnswer(answer._id, question._id)'>Like</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

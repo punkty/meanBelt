@@ -1,0 +1,12 @@
+<div ng-controller='sessionController'>
+    <div ng-controller='questionController'>
+        <a href="/logout"><button>Log Out</button></a>
+        <form ng-submit='addQuestion()'>
+            <p> Question: <input type="text" ng-model='newQuestion.title'></p>
+            <p> Description(optional): <textarea name="" id="" cols="30" rows="10" ng-model='newQuestion.desc'></textarea></p>
+            <input type="submit" value="Submit">
+        </form>
+        <a href='#!/dash'><button>Cancel</button></a>
+        <p ng-repeat='error in errors'>{{ error }}</p>
+    </div>
+</div>

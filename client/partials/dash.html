@@ -1,0 +1,21 @@
+<div ng-controller='sessionController'>
+    <a href="/logout"><button>Log Out</button></a>
+    <a href="#!/addQuestion"><button>Add a Question</button></a>
+    <p>Hi {{ curUser.name }}!</p>
+    <div ng-controller='questionController'>
+    <input type="text" placeholder="Search" ng-model='search.title'>
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>Answers</th>
+                <th>Action</th>
+            </tr>
+            <tr ng-repeat='question in allQuestions | filter:search'>
+                <td>{{ question.title }}</td>
+                <td>{{ question._answers.length }}</td>
+                <td><a href="#!/showQuestion/{{ question._id }}"><button>Show</button></a> <a href="#!/addAnswer/{{ question._id }}"><button>Answer</button></a></td>  
+            </tr>
+        </table>
+    </div>
+    
+</div>

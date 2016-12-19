@@ -1,0 +1,19 @@
+<div ng-controller='sessionController'>
+    <a href="/logout"><button>Log Out</button></a>
+    <a href='#!/dash'><button>Home</button></a>
+    <div ng-controller='questionController'>
+    <a href="#!/showQuestion/{{ question._id }}"><button>Back to Question</button></a>
+        <h2>{{ question.title }}</h2>
+        <h4>{{ question.desc }}</h4>
+    
+        <div ng-controller='answerController'>
+            <form ng-submit='addAnswer()'>
+                <p>Your Answer: <input type="text" ng-model='answer.content'></p>
+                <p>Supporting Details for your answer:(optional)</p><textarea cols="30" rows="10" ng-model='answer.support'></textarea>
+                <p><input type="submit" value="Submit"></p>
+            </form>
+            <a href='#!/dash'><button>Cancel</button></a>
+            <p ng-repeat='error in errors'>{{ error }}</p>
+        </div>
+    </div>
+</div>

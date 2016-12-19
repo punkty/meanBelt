@@ -1,0 +1,10 @@
+<div>
+    <h1>Q & A</h1>
+    <form ng-submit='login()'>
+        <p>Name: <input type="text" ng-model='newUser.name'>
+        <input type="submit" value='Enter'></p>
+    </form>
+    <ul>
+        <li ng-repeat='error in errors'>{{ error }}</li>
+    </ul>
+</div>
